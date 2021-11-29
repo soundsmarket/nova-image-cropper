@@ -1,13 +1,16 @@
 <template>
   <div
     ref="container"
-    class="container"
+    class="container flex flex-col"
   >
-    <img
-      ref="img"
-      :src="image"
-      alt="Picture"
-    >
+    <div class="mb-4 text-left">
+        <div class="my-2">Rotation: {{ rotation }}º</div>
+        <input type="range" name="rotation" v-model="rotation" min="0" max="360" step="15">
+    </div>
+    <div class="mb-4 text-left">
+        <div class="my-2">Preview</div>
+        <img ref="img" :src="image" alt="Picture">
+    </div>
   </div>
 </template>
 <script>
@@ -33,7 +36,8 @@ export default {
     return {
       cropper: null,
       width: 0,
-      height: 0
+      height: 0,
+      rotation: 0
     }
   },
 
@@ -42,6 +46,11 @@ export default {
       if (image) {
         this.buildCropper()
       }
+    },
+    rotation(rotation) {
+        if (this.cropper) {
+            this.cropper.rotateTo(rotation)
+        }
     }
   },
 
@@ -65,13 +74,13 @@ export default {
       const self = this
 
       this.cropper = new Cropper(this.$refs.img, {
-        viewMode: 1,
+        viewMode: 0,
         dragMode: 'crop',
         autoCropArea: 1,
         aspectRatio: self.ratio,
         checkCrossOrigin: false,
         minContainerWidth: self.width,
-        minContainerHeight: self.height
+        minContainerHeight: self.height,
       })
       this.cropper.replace(this.image)
     },
@@ -89,7 +98,9 @@ export default {
       if (!this.cropper) {
         return
       }
-      return this.cropper.getCroppedCanvas()
+      return this.cropper.getCroppedCanvas({
+        fillColor: '#fff',
+      })
     },
 
     replace(image) {

@@ -10,19 +10,19 @@
       @change="setImage"
     >
     <div
-      class="bg-30 flex flex-wrap px-8 py-4"
+      class="flex flex-wrap px-8 py-4 bg-30"
       v-if="imgSrc"
     >
       <div
-        class="btn btn-default btn-primary mr-3 mb-2 cursor-pointer"
+        class="mb-2 mr-3 cursor-pointer btn btn-default btn-primary"
         @click="$emit('finished')"
       >{{__('Cancel Crop')}}</div>
       <label
         :for="hash"
-        class="btn btn-default btn-primary mr-3 mb-2 cursor-pointer"
+        class="mb-2 mr-3 cursor-pointer btn btn-default btn-primary"
       >{{__('Change Image')}}</label>
       <div
-        class="btn btn-default btn-primary cursor-pointer"
+        class="cursor-pointer btn btn-default btn-success"
         @click="cropImage"
       >{{__('Done')}}</div>
     </div>

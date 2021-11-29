@@ -13,13 +13,13 @@
             @fileChanged="setFile"
           />
           <template v-if="!editingImage && value">
-            <div class="bg-30 flex px-8 py-4">
+            <div class="flex px-8 py-4 bg-30">
               <a
-                class="btn btn-default btn-primary cursor-pointer"
+                class="cursor-pointer btn btn-default btn-primary"
                 @click="editingImage = true"
               >{{__('Edit Image')}}</a>
               <a
-                class="btn btn-default btn-danger cursor-pointer ml-3"
+                class="ml-3 cursor-pointer btn btn-default btn-danger"
                 v-if="shouldShowRemoveButton"
                 @click="confirmRemoval"
               >{{__('Delete')}}</a>

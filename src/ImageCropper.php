@@ -1,6 +1,6 @@
 <?php
 
-namespace R64\NovaImageCropper;
+namespace SoundsMarket\NovaImageCropper;
 
 use Laravel\Nova\Fields\Image;
 use Illuminate\Support\Facades\Storage;

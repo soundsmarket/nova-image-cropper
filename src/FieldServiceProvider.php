@@ -1,6 +1,6 @@
 <?php
 
-namespace R64\NovaImageCropper;
+namespace SoundsMarket\NovaImageCropper;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Events\ServingNova;

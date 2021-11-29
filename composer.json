@@ -1,6 +1,6 @@
 {
-    "name": "r64/nova-image-cropper",
-    "description": "A Laravel Nova field.",
+    "name": "soundsmarket/nova-image-cropper",
+    "description": "A Laravel Nova field tweeked by Sounds Market.",
     "keywords": [
         "laravel",
         "nova"
@@ -11,13 +11,13 @@
     },
     "autoload": {
         "psr-4": {
-            "R64\\NovaImageCropper\\": "src/"
+            "SoundsMarket\\NovaImageCropper\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "R64\\NovaImageCropper\\FieldServiceProvider"
+                "SoundsMarket\\NovaImageCropper\\FieldServiceProvider"
             ]
         }
     },
